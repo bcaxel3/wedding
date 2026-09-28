@@ -1,0 +1,121 @@
+/* ===== Colors & fonts — change these to restyle the whole site ===== */
+:root {
+  --cream: #F3EBD6;                          /* headline text color */
+  --banner-bg: rgba(243, 235, 214, 0.47);    /* #F3EBD6 at 120/255 opacity */
+  --banner-text: #5f5f5f;                    /* names + menu */
+  --banner-line: #8a8a8a;                    /* double lines above/below banner */
+  --serif: Georgia, "Times New Roman", serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--serif);
+  color: #333;
+  background: #6b7f99 url("images/background.jpg") center bottom / cover no-repeat fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Banner (same on every page) ===== */
+.banner {
+  background: var(--banner-bg);
+  border-top: 4px double var(--banner-line);
+  border-bottom: 4px double var(--banner-line);
+  text-align: center;
+  padding: 18px 16px 14px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.banner .names {
+  display: inline-block;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: normal;
+  letter-spacing: 0.02em;
+  color: var(--banner-text);
+  text-decoration: none;
+  margin: 0 0 10px;
+}
+
+.banner nav {
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.banner nav a {
+  color: var(--banner-text);
+  text-decoration: none;
+  padding: 4px 6px;
+}
+
+.banner nav a:hover,
+.banner nav a[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.banner nav .sep {
+  color: var(--banner-text);
+  margin: 0 10px;
+}
+
+/* ===== Home page hero ===== */
+.hero {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  padding: 18vh 16px 30vh;
+}
+
+.hero h1 {
+  margin: 0;
+  color: var(--cream);
+  font-weight: normal;
+  font-size: clamp(2.4rem, 6.5vw, 4.5rem);
+  line-height: 1.15;
+  text-shadow: 0 1px 12px rgba(60, 50, 70, 0.25);
+}
+
+/* ===== Inner pages (RSVP, Registry, FAQ) ===== */
+.page {
+  flex: 1;
+  width: 100%;
+  max-width: 860px;
+  margin: 48px auto;
+  padding: 0 16px;
+}
+
+.card {
+  background: rgba(243, 235, 214, 0.88);
+  border: 4px double var(--banner-line);
+  padding: 40px 32px;
+  text-align: center;
+  min-height: 40vh;
+}
+
+.card h2 {
+  margin: 0 0 16px;
+  font-weight: normal;
+  font-size: 2.2rem;
+  color: var(--banner-text);
+}
+
+.card p { line-height: 1.6; }
+
+@media (max-width: 480px) {
+  .banner nav .sep { margin: 0 4px; }
+  .hero { padding-top: 14vh; }
+  .card { padding: 28px 18px; }
+  /* "fixed" backgrounds are glitchy on phones */
+  body { background-attachment: scroll; }
+}
