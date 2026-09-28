@@ -1,7 +1,7 @@
 /* ===== Colors & fonts — change these to restyle the whole site ===== */
 :root {
   --cream: #F3EBD6;                          /* headline text color */
-  --banner-bg: rgba(243, 235, 214, 0.47);    /* #F3EBD6 at 120/255 opacity */
+  --banner-bg: rgba(243, 235, 214, 0.95);    /* #F3EBD6 at 120/255 opacity */
   --banner-text: #5f5f5f;                    /* names + menu */
   --banner-line: #8a8a8a;                    /* double lines above/below banner */
   --serif: Georgia, "Times New Roman", serif;
